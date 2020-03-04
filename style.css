@@ -1,0 +1,207 @@
+body{
+    background-color: white;
+    margin: auto;
+    padding: 50px;
+    
+
+
+}
+
+@media screen and (max-width: 940px) {
+    input#imeKorisnika, input#prezimeKorisnika {   
+      width: 100%;
+      margin-bottom: 5px;
+    }
+
+    select {
+        width: 100%;
+    }
+
+    hr {
+        margin-bottom: 10px;
+    }
+
+    #slika {
+        margin-top: 20px;
+        text-align: center;
+        border-radius: 50%;
+    }
+    
+
+    textarea {   
+        width: 230px;
+      }
+  
+    #biografijaDio {
+        margin-top: 40px;
+    }
+
+    #cvDio {   
+        flex-direction: column;
+    }
+
+    #builder {
+        text-align: center;
+    }
+    
+    
+
+  }
+
+#header{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+}
+
+
+#imeprezime {
+    flex: 80%;
+    text-align: center;
+    
+}
+
+#slika {
+    flex: 20%;
+}
+
+hr {
+    width: 10%;
+}
+
+input#imeKorisnika {
+    height: 30px;
+    text-align: center;
+}
+input#prezimeKorisnika {
+    height: 30px;
+    text-align: center;
+}
+
+select {
+    height: 30px;
+
+}
+
+#siviProstor {
+    padding-bottom: 20px;
+    background-color: whitesmoke;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#cvDio {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#kontaktDio {
+    flex: 10%;
+    
+}
+
+#biografijaDio {
+    flex:60%;
+    text-align: center;
+}
+
+#korisniLinkovi {
+    flex: 20%;
+    
+}
+
+
+
+
+h4 {
+    font-family: "Lucida Console", Monaco, monospace;
+    letter-spacing: 5px;
+    color: pink;
+    font-size: 16px;
+}
+
+input.kontakt {
+    height: 15px;
+    text-align: center;
+    width: 180px;
+
+}
+
+.kontakt{ 
+    display: flex;
+    display: inline;
+    padding: 5px;
+    outline: none;
+}
+
+.kontakt:focus {
+    border: 1px solid pink;
+    height: 20px;
+}
+
+#skolovanje {
+    padding-top: 10px;
+}
+
+#vjestine {
+    padding-top: 10px;
+    
+}
+
+#marketingSkill, #finansijeSkill {
+    margin-bottom: 12px;
+}
+
+#planiranjeSkill {
+    margin-bottom: 12px;
+}
+
+.checked {
+    color: orange;
+  }
+
+
+#button {
+    margin: 80px;
+    text-align: center;
+}
+
+.textarea:focus {
+    border: 1px solid pink;
+    outline: none;
+}
+
+
+button {
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+    color: white;
+    background-color: pink;
+    outline: none;
+    
+
+}
+
+h2 {
+    font-family: "Lucida Console", Monaco, monospace;
+    letter-spacing: 6px;
+    color: pink;
+    font-size: 26px;
+    margin: 2;
+}
+
+a {
+    padding-left: 5px;
+    letter-spacing: 3px;
+    font-size: 12px;
+}
+
+
+#close-CSS {
+    background-image: url( 'template.jpg' );
+    background-size: 260px 376px;
+    height: 376px;  
+    width: 260px;
+}
