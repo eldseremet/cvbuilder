@@ -1,5 +1,5 @@
-var hideKreator = new Vue({
-    el: '#kreator',
+var cvBuilder = new Vue({
+    el: '#cvApp',
     data: {
         imeKorisnika: "",
         prezimeKorisnika: "",
@@ -15,11 +15,11 @@ var hideKreator = new Vue({
         gradBoravista:"",
         datumRodjenja:"",
         slika:"",
-        isShow: true,
-        isHidden : false
+        hideB: true,
         
     }
 })
+
 
 
 

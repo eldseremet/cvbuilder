@@ -9,141 +9,143 @@
     <link rel="stylesheet" href="rangeSlider.css">
 </head>
 <body>
-    <div id="builder">
 
-        <div v-if="isShow" id="kreator">
+    <div id="cvApp">
+        <form action="">
+        <div v-if="hideB" id="builder">
 
-        <div id="header">
+            <div id="header">
+                <div id="imeprezime">
 
-            <div id="imeprezime">
+                    <input required v-model="imeKorisnika" id="imeKorisnika" placeholder="Unesite Vaše ime">
+                    <input required v-model="prezimeKorisnika" id="prezimeKorisnika" placeholder="Unesite Vaše prezime">
+                    <hr id="headerhr">
+                    <select v-model="key">
+                        <option disabled selected>Odaberite Vaš nivo programiranja</option>
+                        <option required value="Junior Developer">Junior Developer</option>
+                        <option required value="Senior Developer">Senior Developer</option>
+                    </select>
+                    
+                </div>
 
-                <input v-model="imeKorisnika" id="imeKorisnika" placeholder="Unesite Vaše ime">
-                <input v-model="prezimeKorisnika" id="prezimeKorisnika" placeholder="Unesite Vaše prezime">
-                        <hr id="headerhr">
-                <select v-model="key" id="option">
-                    <option value="" disabled selected>Odaberite Vaš nivo programiranja</option>
-                    <option value="Junior Developer">Junior Developer</option>
-                    <option value="Senior Developer">Senior Developer</option>
-                </select>
+                <div id="slika">
+                    <img style="width: 100px; border-radius: 50%;"  src="thumbnail.png" >
+                </div>
+      
+                  
+            </div>
+
+            <div id="siviProstor"></div>
+
+            <div id="cvDio">
+                <div id="kontaktDio">
+                    <h4>KONTAKT</h4>
+                    <div id="inputKontakt">
+                        <i class="fa fa-phone fa-lg"></i>
+                        <input required v-model="brojTelefona "id="telefonInput" class="kontakt" type="text" placeholder="Unesite Vaš broj telefona">
+                    </div>
+                    
+                    <br>
+    
+                    <div id="drzavaBoravista">
+                        <i class="fa fa-globe fa-lg"></i>
+                        <input required v-model="drzavaBoravista" id="drzavaInput" class="kontakt" type="text" placeholder="Država u kojoj trenutno boravite">
+                    </div>
+                    
+                    <br>
+    
+                    <div id="gradBoravista">
+                        <i class="fa fa-location-arrow fa-lg"></i>
+                        <input required v-model="gradBoravista" id="gradInput" class="kontakt" type="text" placeholder="Grad u kojem boravite">
+                    </div>
+    
+                    <br>
+    
+                    <div id="datumRodjenja">
+                        <i class="fa fa-table fa-lg"></i>
+                        <input required v-model="datumRodjenja" id="datumInput" class="kontakt" type="text" placeholder="Datum rođenja : DD.MM.YYYY">
+                    </div>
+    
+                    <div id="skolovanje">
+    
+                        <h4>ŠKOLOVANJE</h4>
+    
+                        <textarea required v-model="skolovanje" id="skolovanjeArea" class="textarea" rows="7" style="width: 215px;" placeholder="Unesite Vaše dosadašnje završeno školovanje"></textarea>
+    
+                    
+                   
+                    </div>
+                    
+    
+                    <div id="vjestine">
+    
+                        <h4>VAŠE VJEŠTINE</h4>
+    
+                        <div id="marketingSkill">
+                           <a>Marketing : </a><br>
+                           <input id="marketingInput" type="range" min="0" max="100" step="1" v-model="valueMarketing" style="width: 230px;">
+                        </div>
+    
+                        <div id="finansijeSkill">
+                            <a>Finansije : </a><br>
+                            <input id="finansijeInput" type="range" min="0" max="100" step="1" v-model="valueFinansije" style="width: 230px;">
+                        </div>
+    
+                           
+                    </div>
                 
-            </div>
+                </div>
 
-            <div id="slika">
-              <img style="width: 100px; border-radius: 50%;"  src="thumbnail.png" >
+                <div id="biografijaDio">
+                    <h4>PROFIL</h4>
+                    <div id="oKorisniku">
+    
+                        <textarea style="padding: 20px;" v-model="oKorisniku" id="okorisniku" class="textarea" rows="10" cols="100"  placeholder="Recite nam više o sebi ..."></textarea>
+    
+                    </div>
+    
+                    <h4>RADNO ISKUSTVO</h4>
+                    <div id="radnoIskustvo">
+    
+                        <textarea v-model="radnoIskustvo" id="iskustvo" class="textarea" rows="10" cols="100"  placeholder="Navedite prijašnje radno iskustvo ukoliko postoji takvo ..."></textarea>
+    
+                    </div>
+                </div>
 
-            </div>
-
-            
-        </div>
+                <div id="korisniLinkovi">
+                    <h4>KORISNI LINKOVI</h4>
+                    <i class="fa fa-question-circle fa-lg"></i> <a style="text-decoration: none;" href="#">Česta pitanja</a> <br> <br>
+                    <i class="fa fa-question-circle fa-lg"></i> <a style="text-decoration: none;" href="#">Kontaktirajte nas</a> <br><br>
+                    <i class="fa fa-question-circle fa-lg"></i> <a style="text-decoration: none;" href="#">Dodatne informacije</a> <br> <br><br><br>
+      
+                    
+                    <div id="korisniLinkovi">
+                      <h4>IZGLED TEMPLATE-a</h4>
+                      <button id="close-CSS" onclick="popuni()"></button>
+                      <p style="font-size: 16px;">*klikom na sliku automatski popunite template</p>
+                      <p style="font-size: 16px;">!potrebno je upisati validne podatke prije slanja</p>
+      
+                      
         
-        <div id="siviProstor">
-
-        </div>
-        
-        <div id="cvDio">
-            <div id="kontaktDio">
-                <h4>KONTAKT</h4>
-                <div id="inputKontakt">
-                    <i class="fa fa-phone fa-lg"></i>
-                    <input v-model="brojTelefona "id="telefonInput" class="kontakt" type="text" placeholder="Unesite Vaš broj telefona">
-                  </div>
-                
-                  <br>
-
-                  <div id="drzavaBoravista">
-                    <i class="fa fa-globe fa-lg"></i>
-                    <input v-model="drzavaBoravista" id="drzavaInput" class="kontakt" type="text" placeholder="Država u kojoj trenutno boravite">
-                  </div>
-                  <br>
-
-                  <div id="gradBoravista">
-                    <i class="fa fa-location-arrow fa-lg"></i>
-                    <input v-model="gradBoravista" id="gradInput" class="kontakt" type="text" placeholder="Grad u kojem boravite">
-                  </div>
-
-                  <br>
-
-                  <div id="datumRodjenja">
-                    <i class="fa fa-table fa-lg"></i>
-                    <input v-model="datumRodjenja" id="datumInput" class="kontakt" type="text" placeholder="Datum rođenja : DD.MM.YYYY">
-                  </div>
-
-                  <div id="skolovanje">
-
-                    <h4>ŠKOLOVANJE</h4>
-
-                    <textarea v-model="skolovanje" id="skolovanjeArea" class="textarea" rows="7" style="width: 215px;" placeholder="Unesite Vaše dosadašnje završeno školovanje"></textarea>
-
-                
-                  </div>
-                
-
-                  <div id="vjestine">
-
-                    <h4>VAŠE VJEŠTINE</h4>
-
-                    <div id="marketingSkill">
-                       <a>Marketing : </a><br>
-                       <input id="marketingInput" type="range" min="0" max="100" step="1" v-model="valueMarketing" style="width: 230px;">
-                      </div>
-
-                      <div id="finansijeSkill">
-                        <a>Finansije : </a><br>
-                        <input id="finansijeInput" type="range" min="0" max="100" step="1" v-model="valueFinansije" style="width: 230px;">
-                       </div>
-
-                       
-                  </div>
-            </div>
-
-            
-
-            <div id="biografijaDio">
-                <h4>PROFIL</h4>
-                <div id="oKorisniku">
-
-                    <textarea v-model="oKorisniku" id="okorisniku" class="textarea" rows="10" cols="100"  placeholder="Recite nam više o sebi ..."></textarea>
+                     </div>
 
                 </div>
 
-                <h4>RADNO ISKUSTVO</h4>
-                <div id="radnoIskustvo">
-
-                    <textarea v-model="radnoIskustvo" id="iskustvo" class="textarea" rows="10" cols="100"  placeholder="Navedite prijašnje radno iskustvo ukoliko postoji takvo ..."></textarea>
-
-                </div>
             </div>
 
-            <div id="korisniLinkovi">
-              <h4>KORISNI LINKOVI</h4>
-              <i class="fa fa-question-circle fa-lg"></i> <a style="text-decoration: none;" href="#">Česta pitanja</a> <br> <br>
-              <i class="fa fa-question-circle fa-lg"></i> <a style="text-decoration: none;" href="#">Kontaktirajte nas</a> <br><br>
-              <i class="fa fa-question-circle fa-lg"></i> <a style="text-decoration: none;" href="#">Dodatne informacije</a> <br> <br><br><br>
 
-              <legend>
-              <div id="korisniLinkovi">
-                <h4>IZGLED TEMPLATE-a</h4>
-                <button id="close-CSS" onclick="popuni()"></button>
-                <p style="font-size: 16px;">*klikom na sliku automatski popunite template</p>
-                <p style="font-size: 16px;">!potrebno je upisati validne podatke prije slanja</p>
-</legend>
-
-                
-  
-              </div>
+            <div id="button">
+                    <button v-on:click="hideB = !hideB">POŠALJI</input>
+                    <!-- <button>TEST</button> -->
+                    <!-- <button onclick="izbrisi()">PONIŠTI</button> -->
             </div>
 
-            
         </div>
 
-        <div id="button">
-            <button v-on:click="isHidden = !isHidden">POŠALJI</button>
-           <!-- <button onclick="izbrisi()">PONIŠTI</button> -->
-         </div>
-        
-        <!-- Drugi dio koda -->
-        
-        <div id="prikaz" v-if="isHidden">
+        </form>
+
+
+        <div v-if="!hideB" id="prikazCV">
 
             <div id="header">
                 <div id="imeprezime">
@@ -155,15 +157,17 @@
                 </div>
     
                 <div id="slika">
-                   <img src="thumbnail.png" width="100px" style="border-radius: 50%;">
+                   
+                    <img src="thumbnail.png" width="100px" style="border-radius: 50%;">
                    
                 </div>
     
                 
             </div>
-            
+
             <div id="siviProstor"></div>
-            
+
+
             <div id="cvDio">
                 <div id="kontaktDio">
                     <h4>KONTAKT</h4>
@@ -172,56 +176,54 @@
                         <a>{{brojTelefona}}</a>
                     </div>
                     
-                      <br>
+                    <br>
     
-                      <div id="brojTelefona">
+                    <div id="brojTelefona">
                         <i class="fa fa-globe fa-lg"></i>
                         <a>{{drzavaBoravista}}</a>
-                      </div>
+                    </div>
 
-                      <br>
+                    <br>
     
-                      <div id="brojTelefona">
+                    <div id="brojTelefona">
                         <i class="fa fa-location-arrow fa-lg"></i>
                         <a>{{gradBoravista}}</a>
-                      </div>
+                    </div>
 
-                      <br>
+                    <br>
     
-                      <div id="brojTelefona">
+                    <div id="brojTelefona">
                         <i class="fa fa-table fa-lg"></i>
                         <a>{{datumRodjenja}}</a>
-                      </div>
+                    </div>
     
     
-                      <div id="skolovanje">
+                    <div id="skolovanje">
     
                         <h4>ŠKOLOVANJE</h4>
     
                         <a style="text-align: justify;">{{skolovanje}}</a>
 
-                      </div>
+                    </div>
     
-                      <div id="vjestine">
+                    <div id="vjestine">
     
                         <h4>VAŠE VJEŠTINE</h4>
     
                         <div id="marketingSkill">
                             <a>Marketing : </a>
                             <a>{{valueMarketing}} / 100</a>
-                          </div>
+                        </div>
     
-                          <div id="finansijeSkill">
+                        <div id="finansijeSkill">
                             <a>Finansije : </a>
                             <a>{{valueFinansije}} / 100</a>
-                          </div>
+                        </div>
     
                           
-                      </div>
+                    </div>
                 </div>
-    
-                
-    
+            
                 <div id="biografijaDio">
                     <h4>PROFIL</h4>
                     <div id="oKorisniku">
@@ -239,28 +241,18 @@
                 </div>
             </div>
 
+
             <div id="button">
-              <button v-on:click="isHidden = !isHidden">UREDI</button>
-           </div>
+                <button v-on:click="hideB = !hideB">UREDI</button>
+            </div>
 
+        </div>
 
-            
-                  
-                
-      </div>
-        
-     </div>
-     </div>
-    
-
-   
+    </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="script.js"></script>
-
-
-
     
 </body>
 </html>
